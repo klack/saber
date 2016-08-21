@@ -6,14 +6,18 @@
 // @version        0.1
 // @grant          GM_addStyle
 // @include        https://www.safaribooksonline.com*
+// @include-jquery
 // ==/UserScript==
 
 GM_addStyle ( "                                     \
     #sbo-rt-content {                                   \
         min-width:100%; !important                    \
     }                                                 \
-    .sbo-site-nav {                                  \
-        display:none; !important                    \
-    }                                                \
-" );
-console.log('test')
+    .topbar {                                  \
+        position:static; !important                    \
+    }  \
+		body.sidenav { \
+    	padding-left:0; !important \
+		}                                             \
+	" );
+console.log('test');
