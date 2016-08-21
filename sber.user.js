@@ -24,7 +24,7 @@ function addJQuery(callback) {
 // the guts of this userscript
 function main() {
   // Note, jQ replaces $ to avoid conflicts.
-  jQ('.sbo-menu-top').append('<div id="sber-next">-></div>');
+  //jQ('.sbo-menu-top').append('<div id="sber-next">-></div>');
 	jQ( "#sber-next" ).click(function() {
 	  var sber_wh = jQ( window ).height();
 	  window.scrollBy(0, sber_wh / 2);
