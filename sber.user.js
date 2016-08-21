@@ -54,5 +54,11 @@ GM_addStyle ( "                                     \
 	    margin-top: 50px;        \
 	    width: 100px;  \
 		} \
+		#sbo-rt-content .FontName1 { \
+    	font-size: initial; !important; \
+		} \
+		pre .FontName1 { \
+			font-size:151%; !important\
+		} \
 	" );
 
