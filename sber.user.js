@@ -10,26 +10,6 @@
 // ==/UserScript==
 // a function that loads jQuery and calls a callback function when jQuery has finished loading
 
-GM_addStyle ( "                                     \
-	    #sbo-rt-content {                                   \
-        min-width:100%; !important                    \
-    }                                                 \
-    .topbar {                                  \
-        position:static; !important                    \
-    }  \
-		body.sidenav { \
-    	padding-left:0; !important \
-		}                                             \
-		#sber-next, #sber-prev{ \
-	    background: black; \
-	    color: white;        \
-	    font-size: 80px;    \
-	    height: 100px;         \
-	    margin-top: 50px;        \
-	    width: 100px;  \
-		} \
-	" );
-
 function addJQuery(callback) {
   var script = document.createElement("script");
   script.setAttribute("src", "//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js");
@@ -44,17 +24,35 @@ function addJQuery(callback) {
 // the guts of this userscript
 function main() {
   // Note, jQ replaces $ to avoid conflicts.
-  jQ('.sbo-menu-top').append('<div id="sber-next">-></div><div id="sber-prev"><-</div>');
+  jQ('.sbo-menu-top').append('<div id="sber-next">-></div>');
 	jQ( "#sber-next" ).click(function() {
 	  var sber_wh = jQ( window ).height();
-	  window.scrollBy(0, sber_wh / 2);
+	  window.scrollBy(0, sber_wh - 100);
 	});
-	jQ( "#sber-prev" ).click(function() {
-	  var sber_wh = jQ( window ).height();
-	  window.scrollBy(0, -(sber_wh / 2));
-	});
+
 
 }
 
 // load jQuery and execute the main function
 addJQuery(main);
+
+GM_addStyle ( "                                     \
+    #sbo-rt-content {                                   \
+        min-width:100%; !important                    \
+    }                                                 \
+    .topbar {                                  \
+        position:static; !important                    \
+    }  \
+		body.sidenav { \
+    	padding-left:0; !important \
+		}                                             \
+		#sber-next { \
+	    background: black; \
+	    color: white;        \
+	    font-size: 80px;    \
+	    height: 100px;         \
+	    margin-top: 50px;        \
+	    width: 100px;  \
+		} \
+	" );
+
