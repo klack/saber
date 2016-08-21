@@ -22,5 +22,10 @@ GM_addStyle ( "                                     \
 	" );
 
 window.scrollBy(0, 2000);
-console.log('test');
-window.scrollBy(0, 2000);
+
+function myFunc(eventObj) {
+  window.scrollBy(0, 500);
+}
+
+var myElement = document.getElementById('container');
+myElement.addEventListener('click', myFunc);
