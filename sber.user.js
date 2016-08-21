@@ -20,4 +20,7 @@ GM_addStyle ( "                                     \
     	padding-left:0; !important \
 		}                                             \
 	" );
+
+window.scrollBy(0, 2000);
 console.log('test');
+window.scrollBy(0, 2000);
