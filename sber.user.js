@@ -24,11 +24,15 @@ function addJQuery(callback) {
 // the guts of this userscript
 function main() {
   // Note, jQ replaces $ to avoid conflicts.
-  jQ('.sbo-menu-top').append('<div id="sber-next">-></div>');
+  jQ('.js-toc').append('<div id="sber-next">-></div><div id="sber-prev"><-</div>');
 	jQ( "#sber-next" ).click(function() {
 	  var sber_wh = jQ( window ).height();
-	  window.scrollBy(0, sber_wh - 100);
+	  window.scrollBy(0, sber_wh / 2);
 	});
+	jQ( "#sber-prev" ).click(function() {
+	  var sber_wh = jQ( window ).height();
+	  window.scrollBy(0, -(sber_wh /2));
+	});	
 
 
 }
@@ -46,13 +50,14 @@ GM_addStyle ( "                                     \
 		body.sidenav { \
     	padding-left:0; !important \
 		}                                             \
-		#sber-next { \
+		#sber-next, #sber-prev { \
 	    background: black; \
 	    color: white;        \
 	    font-size: 80px;    \
 	    height: 100px;         \
-	    margin-top: 50px;        \
-	    width: 100px;  \
+	    width: 100px; \
+	    position: fixed;  \
+	    top: 0; \
 		} \
 		#sbo-rt-content .FontName1 { \
     	font-size: initial; !important; \
