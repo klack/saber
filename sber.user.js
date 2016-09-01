@@ -25,7 +25,6 @@ function main() {
   // Note, jQ replaces $ to avoid conflicts.
   jQ('.js-toc').append('<div id="sber-next">N</div><div id="sber-prev">P</div>');
 
-  /*
 	jQ( "#sber-next" ).click(function() {
 	  var sber_wh = jQ( window ).height();
 	  window.scrollBy(0, sber_wh / 2);
@@ -34,12 +33,10 @@ function main() {
 	  var sber_wh = jQ( window ).height();
 	  window.scrollBy(0, -(sber_wh /2));
 	});
-	*/
 
 }
 
 addJQuery(main);
-
 
 GM_addStyle(" \
 #sbo-rt-content { \
