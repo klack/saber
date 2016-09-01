@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name           SafariBooks E-Reader
+// @name           sber
 // @namespace      klack
 // @description    Fixes margin, hides side panel, adds "turn page" by scrolling the page when the sides are tapped"
 // @copyright      Richard Layton
