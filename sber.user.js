@@ -23,7 +23,7 @@ function addJQuery(callback) {
 
 function main() {
   // Note, jQ replaces $ to avoid conflicts.
-  jQ('.js-toc').append('<div id="sber-next">N</div><div id="sber-prev">P</div>');
+  jQ('.js-toc').append('<div id="sber-next">n</div><div id="sber-prev">p</div>');
 
 	jQ( "#sber-next" ).click(function() {
 	  var sber_wh = jQ( window ).height();
