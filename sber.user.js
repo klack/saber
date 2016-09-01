@@ -27,13 +27,11 @@ function main() {
 
 	jQ( "#sber-next" ).click(function() {
 	  var sber_wh = jQ( window ).height();
-	  var topbar_wh = jQ( '.sbo-menu-top' ).height();
-	  window.scrollBy(0, (sber_wh - topbar_wh) * .95);
+	  window.scrollBy(0, sber_wh / 2);
 	});
 	jQ( "#sber-prev" ).click(function() {
 	  var sber_wh = jQ( window ).height();
-	  var topbar_wh = jQ( '.sbo-menu-top' ).height();
-	  window.scrollBy(0, -(sber_wh - topbar_wh) * .95);
+	  window.scrollBy(0, -(sber_wh /2));
 	});
 
 }
