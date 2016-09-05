@@ -24,7 +24,7 @@ function addJQuery(callback) {
 function main() {
   // Note, jQ replaces $ to avoid conflicts.
   jQ('.js-toc').append('<div id="sber-next">n</div><div id="sber-prev">p</div>');
-
+  jQ('.js-toc').append('<div id="sber-menu">m</div><div id="sber-menu-hidden">h</div>');
 	jQ( "#sber-next" ).click(function() {
 	  var sber_wh = jQ( window ).height();
 	  window.scrollBy(0, sber_wh / 2);
@@ -33,47 +33,65 @@ function main() {
 	  var sber_wh = jQ( window ).height();
 	  window.scrollBy(0, -(sber_wh / 2));
 	});
-
+	jQ( "#sber-menu" ).click(function() {
+		jQ(this).hide();
+		jQ('#sber-menu-hidden').show();
+		jQ('.interface-controls-top').hide();
+		jQ('.topbar').hide();
+	});
+	jQ( "#sber-menu-hidden" ).click(function() {
+		jQ(this).hide();
+		jQ('#sber-menu').show();
+		jQ('.interface-controls-top').show();
+		jQ('.topbar').show();
+	});
 }
 
 addJQuery(main);
 
 GM_addStyle(" \
+.no-padding{\
+	padding-left:0; !important \
+}\
 #sbo-rt-content { \
 	min-width:100%; !important \
 } \
 .topbar { \
-	position:static; !important \
+	//position:static; !important \
 } \
 body.sidenav { \
-	padding-left:0; !important \
+	// \
 } \
 .topnav{ \
 	margin-top: 100px; \
 } \
-#sber-prev { \
-	background: black; \
+#sber-prev, #sber-next { \
+	top:62px; \
+		z-index: 999; \
+			position: fixed; \
+				height: 100px; \
+	width: 100px; \
+		background: black; \
 	color: white; \
 	font-size: 80px; \
-	height: 100px; \
-	width: 100px; \
-	position: fixed; \
-	z-index: 999; \
-	top: 0; \
 } \
 .interface-controls-top { \
 	margin-top: 100px; \
 } \
 #sber-next { \
-	background: black; \
-	color: white; \
-	font-size: 80px; \
-	height: 100px; \
-	width: 100px; \
-	position: fixed; \
-	top: 0; \
-	z-index: 999; \
 	right: 0; \
+} \
+#sber-menu-hidden { \
+	display: none; \
+} \
+#sber-menu, #sber-menu-hidden { \
+	top:0; \
+	height:62px; \
+	background:black; \
+	width:62px; \
+	position:fixed; \
+	z-index:999; \
+	color:white; \
 } \
 #sbo-rt-content .FontName1 { \
 	font-size: initial; !important; \
