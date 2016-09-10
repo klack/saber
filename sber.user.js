@@ -49,6 +49,7 @@ function main() {
         jQ('#sber-prev').show();
         jQ('.sbo-nav-top').hide();
         jQ('.sbo-reading-menu').hide();
+        jQ('.icon-up').toggle('clear');
         jQ('.icon-up').toggleClass('clear');
     });
     jQ("#sber-menu-hidden").click(function () {
@@ -61,7 +62,7 @@ function main() {
         jQ('#sber-prev').hide();
         jQ('.sbo-nav-top').show();
         jQ('.sbo-reading-menu').show();
-        jQ('.icon-up').show();
+        jQ('.icon-up').toggleClass('clear');
     });
 }
 
