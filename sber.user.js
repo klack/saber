@@ -3,7 +3,7 @@
 // @namespace      klack
 // @description    Fixes margin, hides side panel, adds "turn page" by scrolling the page when the sides are tapped"
 // @copyright      Richard Layton
-// @version        0.4
+// @version        0.5
 // @grant          GM_addStyle
 // @include        https://www.safaribooksonline.com*
 // @include-jquery
