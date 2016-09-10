@@ -33,11 +33,11 @@ function main() {
     jQ('body').prepend('<div id="sber-menu"><i class="fa fa-bars"></i></div><div id="sber-menu-hidden"><i class="fa fa-bars"></i></div>');
     jQ("#sber-next").click(function () {
         var sber_wh = jQ(window).height();
-        window.scrollBy(0, sber_wh / 1.25);
+        window.scrollBy(0, sber_wh / 1.15);
     });
     jQ("#sber-prev").click(function () {
         var sber_wh = jQ(window).height();
-        window.scrollBy(0, -(sber_wh / 1.25));
+        window.scrollBy(0, -(sber_wh / 1.15));
     });
     jQ("#sber-menu").click(function () {
         jQ(this).hide();
