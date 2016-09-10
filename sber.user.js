@@ -3,7 +3,7 @@
 // @namespace      klack
 // @description    Fixes margin, hides side panel, adds "turn page" by scrolling the page when the sides are tapped"
 // @copyright      Richard Layton
-// @version        0.5
+// @version        0.55
 // @grant          GM_addStyle
 // @include        https://www.safaribooksonline.com*
 // @include-jquery
@@ -33,11 +33,11 @@ function main() {
     jQ('body').prepend('<div id="sber-menu"><i class="fa fa-bars"></i></div><div id="sber-menu-hidden"><i class="fa fa-bars"></i></div>');
     jQ("#sber-next").click(function () {
         var sber_wh = jQ(window).height();
-        window.scrollBy(0, sber_wh / 1.15);
+        window.scrollBy(0, sber_wh / 2);
     });
     jQ("#sber-prev").click(function () {
         var sber_wh = jQ(window).height();
-        window.scrollBy(0, -(sber_wh / 1.15));
+        window.scrollBy(0, -(sber_wh / 2));
     });
     jQ("#sber-menu").click(function () {
         jQ(this).hide();
@@ -90,7 +90,7 @@ body.sidenav { \
 } \
 #sber-prev, #sber-next { \
 	top:62px; \
-		z-index: 999; \
+		z-index: 500; \
 			position: fixed; \
 				height: 100px; \
 	width: 100px; \
