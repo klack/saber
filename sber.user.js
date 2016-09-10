@@ -29,15 +29,15 @@ function addFontAwesome(callback) {
 
 function main() {
     // Note, jQ replaces $ to avoid conflicts.
-    jQ('body').prepend('<div id="sber-next">n</div><div id="sber-prev">p</div>');
+    jQ('body').prepend('<div id="sber-next"></div><div id="sber-prev"></div>');
     jQ('body').prepend('<div id="sber-menu"><i class="fa fa-bars"></i></div><div id="sber-menu-hidden"><i class="fa fa-bars"></i></div>');
     jQ("#sber-next").click(function () {
         var sber_wh = jQ(window).height();
-        window.scrollBy(0, sber_wh / 2);
+        window.scrollBy(0, sber_wh / 1.25);
     });
     jQ("#sber-prev").click(function () {
         var sber_wh = jQ(window).height();
-        window.scrollBy(0, -(sber_wh / 2));
+        window.scrollBy(0, -(sber_wh / 1.25));
     });
     jQ("#sber-menu").click(function () {
         jQ(this).hide();
@@ -47,6 +47,9 @@ function main() {
         jQ('body.sidenav').addClass('no-padding-left');
         jQ('#sber-next').show();
         jQ('#sber-prev').show();
+        jQ('.sbo-nav-top').hide();
+        jQ('.sbo-reading-menu').hide();
+        jQ('.icon-up').toggleClass('clear');
     });
     jQ("#sber-menu-hidden").click(function () {
         jQ(this).hide();
@@ -56,6 +59,9 @@ function main() {
         jQ('body.sidenav').removeClass('no-padding-left');
         jQ('#sber-next').hide();
         jQ('#sber-prev').hide();
+        jQ('.sbo-nav-top').show();
+        jQ('.sbo-reading-menu').show();
+        jQ('.icon-up').show();
     });
 }
 
@@ -63,6 +69,9 @@ addFontAwesome();
 addJQuery(main);
 
 GM_addStyle(" \
+.clear{\
+    opacity:0;\
+}\
 .no-padding{\
 	padding-left:0; !important \
 }\
@@ -84,12 +93,12 @@ body.sidenav { \
 			position: fixed; \
 				height: 100px; \
 	width: 100px; \
-		background: black; \
+	background: black; \
 	color: white; \
 	height: 100%; \
 	font-size: 80px; \
 	display: none;\
-	opacity: 0.3;\
+	opacity: 0;\
 } \
 .interface-controls-top { \
 	margin-top: 100px; \
@@ -100,21 +109,16 @@ body.sidenav { \
 #sber-menu-hidden { \
 	display: none; \
 } \
-.menu-container{\
-    display:inline-block;\
-    vertical-align: middle;\
-}\
 #sber-menu, #sber-menu-hidden { \
 	top:0; \
-	height:62px; \
-	background:black; \
+	height:61px; \
 	width:55px; \
 	position:fixed; \
 	z-index:999; \
-	color:white; \
+	color:black; \
 	left:0;\
 	text-align:center;\
-	vertical-align:middle;\
+	padding-top:22px;\
 } \
 #sbo-rt-content .FontName1 { \
 	font-size: initial; !important; \
